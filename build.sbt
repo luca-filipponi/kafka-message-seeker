@@ -1,5 +1,5 @@
 name := "kafka-message-seeker"
-version := "0.1"
+version := "0.1.0"
 organization := "com.filiponi"
 scalaVersion := "2.12.8"
 
