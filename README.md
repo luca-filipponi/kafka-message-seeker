@@ -24,4 +24,8 @@ You can build your own jar using sbt:
 sbt clean assembly
 ```
 
-This will run tests as well (will take less than a minute).
+This will run tests as well (will take less than a minute). You can skip test in this way:
+
+```
+sbt "set test in assembly := {}" clean assembly
+```

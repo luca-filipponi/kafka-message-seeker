@@ -31,7 +31,7 @@ object MsgSeeker extends App  {
         val partitionInfos = consumer.partitionsFor(config.topic).asScala
 
         //this poll does the trick to assign all the partition to this consumer, otherwise i can't seek.
-        consumer.poll(Duration.ofSeconds(1))
+        consumer.poll(Duration.ofSeconds(5))
 
         partitionInfos.foreach { partitionInfo =>
           consumer.seek(new TopicPartition(partitionInfo.topic(), partitionInfo.partition()), config.offset)
