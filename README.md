@@ -42,8 +42,18 @@ You can build your own jar using sbt:
 sbt clean assembly
 ```
 
-This will run tests as well (will take less than a minute). You can skip test in this way:
+This will run tests as well (will take less than a minute). 
+
+You can skip test in this way (but you shouldn't):
 
 ```
 sbt "set test in assembly := {}" clean assembly
+```
+
+### Known issues
+
+If the kafka-message-seeker can't connect to the broker will timeout after a while this error:
+
+```
+Exception in thread "main" org.apache.kafka.common.errors.TimeoutException: Timeout expired while fetching topic metadata
 ```
