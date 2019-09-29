@@ -17,7 +17,7 @@ offset 1000 on the topic "test_topic" you should run in this way:
 
 `java -jar kafka-message-seeker.jar --topic test_topic --offset 1000 --search-for hello`
 
-# Build your jar:
+### Build your jar:
 
 You can build your own jar using sbt:
 ```
