@@ -1,7 +1,7 @@
 # kafka-message-seeker
  
 This application will start a kafka consumer that will scan a topic looking for the a string.
-To run the application you need to build (or download the pre built jar) with these options:
+To run the application you need the jar (you can build or download it from [releases](https://github.com/LFilips/kafka-message-seeker/releases)) with these options:
 
 ```
 Usage: kafkaMessage seeker [options]
