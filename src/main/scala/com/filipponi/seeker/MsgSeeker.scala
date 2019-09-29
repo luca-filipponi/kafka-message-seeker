@@ -22,7 +22,7 @@ object MsgSeeker extends App  {
     OParser.parse(kafkaMsgSeekerArgsParser, args, Config.empty()) match {
       case Some(config) =>
 
-        logger.info(s"Searching for string: ${config.stringToSeek}, from offset: ${config.offset} on topic: ${config.topic}")
+        logger.info(s"Searching for string: ${config.stringToSeek}, from offset: ${config.offset}, on topic: ${config.topic}, with broker: ${config.brokers}")
 
         val consumer = createConsumer(config.brokers)
 
@@ -43,7 +43,7 @@ object MsgSeeker extends App  {
 
         while (moreMessages) {
 
-          val records: ConsumerRecords[String, Array[Byte]] = consumer.poll(Duration.ofSeconds(1))
+          val records: ConsumerRecords[String, Array[Byte]] = consumer.poll(Duration.ofSeconds(2))
           if (records.isEmpty) moreMessages = false
           val iterator = records.iterator()
           while (iterator.hasNext) {

@@ -17,6 +17,24 @@ offset 1000 on the topic "test_topic" you should run in this way:
 
 `java -jar kafka-message-seeker.jar --topic test_topic --offset 1000 --search-for hello`
 
+If you'd like to scan the whole topic just use 0 as offset. Be aware that scanning an entire kafka topic 
+can take long time (depending on kafka message retention policy).
+
+If a message is found will be printed in the console the record metadata and the record value, 
+for example:
+
+```
+12:53:23.718 - I've found a match!
+ {Key: null
+ Offset: 3
+ Partition: 0
+ Value: hello}
+```
+
+value is the whole kafka message (not just the matched string).
+
+Every 20 seconds there will be an update about the current offset/partition.
+
 ### Build your jar:
 
 You can build your own jar using sbt:
