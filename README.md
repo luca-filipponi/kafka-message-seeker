@@ -1,8 +1,9 @@
 # kafka-message-seeker
  
-This application will start a kafka consumer that will scan a topic looking for the a string.
+This application will start a kafka consumer that will scan a topic looking for the specified string. It is useful when you have a fragment of a kafka message and you want to find the whole together with its offset and partition.
 To run the application you need the jar (you can build or download it from [releases](https://github.com/LFilips/kafka-message-seeker/releases)) with these options:
 
+### How to use
 ```
 Usage: kafkaMessage seeker [options]
 
@@ -12,8 +13,8 @@ Usage: kafkaMessage seeker [options]
   -o, --offset <value>     The offset to start with (for every partition!)
 ```
 
-For example if you want to find all the messages that contains the string "hello" starting from
-offset 1000 on the topic "test_topic" you should run in this way:
+For example if you want to find all the messages containing the string "hello" starting from
+offset 1000 on the topic "test_topic" you have to use these args:
 
 `java -jar kafka-message-seeker.jar --topic test_topic --offset 1000 --search-for hello`
 
