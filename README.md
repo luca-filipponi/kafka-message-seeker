@@ -1,7 +1,12 @@
 # kafka-message-seeker
  
 This application will start a kafka consumer that will scan a topic looking for the specified string. It is useful when you have a fragment of a kafka message and you want to find the whole together with its offset and partition.
-To run the application you need the jar (you can build or download it from [releases](https://github.com/LFilips/kafka-message-seeker/releases)) with these options:
+To run the application you need the jar (you can build or download it from [releases](https://github.com/LFilips/kafka-message-seeker/releases)).
+
+For example:
+```
+wget -O kafka-message-seeker-0.1.0.jar https://github.com/LFilips/kafka-message-seeker/releases/download/v0.1.0/kafka-message-seeker-0.1.0.jar
+```
 
 ### How to use
 ```
